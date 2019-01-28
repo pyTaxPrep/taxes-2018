@@ -1,0 +1,206 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+A set of Python scripts to fill in common tax forms and schedules.
+
+Supported Forms:
+================
+
+The filer is single and has moderately-complex taxes due to:
+  - A combination of W2 and 1099-MISC income.
+  - A sole proprietorship (Schedule C-EZ and SE). 
+  - Money in bank accounts (1099-INT) and investment accounts (1099-DIV).
+  - Estimated tax payments.
+  - Contributions to a SEP IRA, rollovers from a SEP IRA, and a backdoor Roth conversion.
+  - Deductions (medical expenses and donations).
+
+With that in mind, the following forms have some amount of support:
+  - Form 1040 (Schedules 1, 4, 5, A, B, CEZ, and SE)
+  - SEP IRA Contribution Worksheet
+  - Form 8606
+
+The filer is _not_:
+  - Filing jointly.
+  - A homeowner.
+  - Claiming any dependents.
+
+(Do you fall into those categories? See "Contributing" below!)
+
+
+Repository Layout:
+==================
+
+    => templates/  - Unmodified PDF forms downloaded from the IRS.
+    => forms/      - Python scripts for filling in various forms / schedules
+    => filled/     - Directory where generated filled in forms get placed
+    => keyfiles/   - Form metadata, one for each PDF form, mapping field
+                     names to readable names
+    => tables/     - Tax tables for 2018
+
+    => data.json   - Fill in this file with finance information
+    => doTaxes.py  - Run this script to actually fill in all the forms
+    => requirements.txt - For Python virtualenv, if you want to set one up
+
+
+Getting Started:
+================
+
+    Set up your environment. Create a new virtual environment
+    (`virtualenv venv`), jump into it (`source venv/bin/activate`),
+    and then install required packages (`pip install -r
+    requirements.txt`).
+
+    If you don't have Pip and/or Virtualenv, see
+    https://pip.pypa.io/en/stable/installing/
+
+    At this point, you should be able to generate Mickey Mouse's tax
+    forms by running `python doTaxes.py`. The filled in forms will all
+    go into `filled/`.
+
+    Chances are you don't want Mickey Mouse's taxes ... you want your
+    own taxes. Open up `data.json` and update the values to match your
+    own.
+
+    Some things to keep in mind:
+      => Be careful not to commit an updated `data.json` file to a
+         public repository.
+
+      => If you're unsure what a field is used for, try searching for
+         its use in the source code. That should tell you which
+         schedules rely on the field.
+
+      => If a field doesn't apply to you, make it empty instead of
+         removing it entirely. (So, strings become empty strings, 
+         numbers become 0, lists become empty lists, etc..)
+
+      => As you change `data.json`, re-generate taxes to make sure
+         they still generate.
+
+
+Contributing:
+=============
+
+    First, if you'd like to contribute, tinker around with the code
+    base a bit. See if you can figure out how to control the value
+    that goes in Form 1040 Line 12 B. Reading "Implementation Details"
+    below might help.
+
+    I'll happily entertain pull requests to add additional features
+    or bug fixes.
+       
+      - Add more error checking / resilence to missing JSON values. (Easy)
+      - Add support for joint filers. (Easy - Medium)
+
+    I'll also entertain adding support for additional schedules /
+    forms, including state forms.  This is a bit more work, depending
+    on the number of fillable fields. And, anecdotally, I've found that
+    state forms are less standardized than federal forms, which makes
+    things more challenging.
+
+    The main steps in adding a form are:
+      - Adding the original form to templates.
+      - Adding a new Python file to the form in forms. Like the
+        other files, it should have `fill_in_form` and `build_data`
+        functions.
+      - Add a keyfile for the form to keyfiles. Running `python
+        forms/utils.py [form PDF]` can help by identifying the field
+        names; you'll need to create the readable names manually
+        though.
+      - If applicable, add any needed tables to tables.
+      - Update `data.json` with examples for any fields your form needs.
+      - Update `doTaxes.py` to call into your new form.
+
+Issues:
+=======
+
+    You're welcome to submit issues for bugs or requested features.  I
+    can't promise I'll fix all (or even any) of them ... but don't let
+    that stop you. Maybe someone else will be inspired and submit a
+    pull request!
+   
+    
+
+Implementation Details:
+=======================
+
+   Here's a high level overview of what's going on behind the scenes.
+
+   utils.py has (among other things) a set of utilities for
+   manipulating PDF files. There's functionality to iterate through
+   all the fillable fields in a PDF and create an overlay with text
+   where those fields appear. Then, the overlay gets combined with the
+   original PDF to generate the filled in PDF.
+
+   How does utils.py know what to put where? Each fillable field in a
+   PDF has a name. The thing is, these names can be opaque, and they
+   may not directly describe what the field actually holds. To make
+   working with fields a bit easier, each PDF has a keyfile. The
+   keyfile's only job is to map readable names into PDF field names
+   and back.
+
+   Each form has a build_data() function. This function returns a
+   dictionary where the keys are readable PDF form names and the
+   values are the data that should go in those fields. Then, the
+   utility functions take care of creating an overlay that puts
+   the text in the right spot.
+
+   Separately, each form has a fill_in_form() function. This is the
+   function that should actually generate the filled in PDF (by
+   calling utils.write_fillable_pdf()). 
+
+   Why separate out these two? This lets one form pull data from
+   another form by running that form's build_data() function. So, a
+   form's build_data() might get called many times, while you'll
+   probably only call fill_in_form() once.
+
+   To make this concrete, let's say you wanted to add in support
+   for reporting "Tax Exempt Interest" (Form 1040 box 2A):
+
+      - Looking at keyfiles/s1040.keys, 'tax_exempt_interest_dollars'
+        and 'tax_exempt_interest_cents' look like the fields we're
+        interested in.
+
+      - Looking at forms/s_1040.py, those keys don't show up anywhere.
+        That's why the box is blank. (For now.)
+
+      - To fill it in, we need to add values for
+        'tax_exempt_interest_dollars' and 'tax_exempt_interest_cents'
+        to the dictionary that will be returned by the build_data()
+        function in s_1040.py. So, let's do that:
+
+
+    utils.add_keyed_float(w2_income, 'wages_salaries_tips', data_dict)
+    
++   data_dict['tax_exempt_interest_dollars'] = 50
++   data_dict['tax_exempt_interest_cents'] = 02
+
+    data_dict['taxable_interest_dollars'], data_dict['taxable_interest_cents'] =\
+        schedule_b['interest_total_dollars'], schedule_b['interest_total_cents']
+
+        
+      - There's a helper function that can make this easier. For
+        instance, since we have keys with '_dollars' and '_cents', we
+        can use utils.add_keyed_float():
+
+        utils.add_keyed_float(50.02, 'tax_exempt_interest', data_dict)
+
+      - Of course, you probably don't want to hard code in the value
+        50.02. It might come from a supporting schedule, in which case
+        you could call that schedule's build_data() function and pull
+        the value out of the result. (That's what we do for
+        taxable_interest, which gets computed and pulled from the
+        schedule B.) Alternately, it might come from data.json (like
+        what we do for reporting 1099_div's for qualified_dividends).
+

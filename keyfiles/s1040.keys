@@ -1,0 +1,144 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+file_single_y                           FEFF00630031005F00300031005B0030005D /Btn
+file_married_joint_y                    FEFF00630031005F00300031005B0031005D /Btn
+file_married_separate_y                 FEFF00630031005F00300031005B0032005D /Btn
+file_head_of_household_y                FEFF00630031005F00300031005B0033005D /Btn
+file_widower_y                          FEFF00630031005F00300031005B0034005D /Btn
+widower                                 FEFF00660031005F00300031005B0030005D /Tx
+first_and_initial                       FEFF00660031005F00300032005B0030005D /Tx
+last                                    FEFF00660031005F00300033005B0030005D /Tx
+ssn                                     FEFF00660031005F00300034005B0030005D /Tx
+someone_elses_dependent_y               FEFF00630031005F00300032005B0030005D /Btn
+senior_citizen_y                        FEFF00630031005F00300033005B0030005D /Btn
+blind_y                                 FEFF00630031005F00300034005B0030005D /Btn
+spouse_first_and_initial                FEFF00660031005F00300035005B0030005D /Tx
+spouse_last                             FEFF00660031005F00300036005B0030005D /Tx
+spouse_ssn                              FEFF00660031005F00300037005B0030005D /Tx
+spouse_someone_elses_dependent_y        FEFF00630031005F00300035005B0030005D /Btn
+spouse_senior_citizen_y                 FEFF00630031005F00300036005B0030005D /Btn
+spouse_blind_y                          FEFF00630031005F00300037005B0030005D /Btn
+spouse_itemizes_separate_y              FEFF00630031005F00300038005B0030005D /Btn
+home_address                            FEFF00660031005F00300038005B0030005D /Tx
+apt_num                                 FEFF00660031005F00300039005B0030005D /Tx
+city_state_zip                          FEFF00660031005F00310030005B0030005D /Tx
+health_coverage_y                       FEFF00630031005F00300039005B0030005D /Btn
+election_campaign_y                     FEFF00630031005F00310030005B0030005D /Btn
+more_than_four_deps_y                   FEFF00630031005F00310031005B0030005D /Btn
+more_than_four_deps_2_y                 FEFF00630031005F00310032005B0030005D /Btn
+dependent_1_name                        FEFF00660031005F00310031005B0030005D /Tx
+dependent_1_ssn                         FEFF00660031005F00310032005B0030005D /Tx
+dependent_1_relationship                FEFF00660031005F00310033005B0030005D /Tx
+dependent_1_tax_credit_y                FEFF00630031005F00310033005B0030005D /Btn
+dependent_1_credit_others_n             FEFF00630031005F00310034005B0030005D /Btn
+dependent_2_name                        FEFF00660031005F00310034005B0030005D /Tx
+dependent_2_ssn                         FEFF00660031005F00310035005B0030005D /Tx
+dependent_2_relationship                FEFF00660031005F00310036005B0030005D /Tx
+dependent_2_tax_credit_y                FEFF00630031005F00310035005B0030005D /Btn
+dependent_2_credit_others_n             FEFF00630031005F00310036005B0030005D /Btn
+dependent_3_name                        FEFF00660031005F00310037005B0030005D /Tx
+dependent_3_ssn                         FEFF00660031005F00310038005B0030005D /Tx
+dependent_3_relationship                FEFF00660031005F00310039005B0030005D /Tx
+dependent_3_tax_credit_y                FEFF00630031005F00310037005B0030005D /Btn
+dependent_3_credit_others_n             FEFF00630031005F00310038005B0030005D /Btn
+dependent_4_name                        FEFF00660031005F00320030005B0030005D /Tx
+dependent_4_ssn                         FEFF00660031005F00320031005B0030005D /Tx
+dependent_4_relationship                FEFF00660031005F00320032005B0030005D /Tx
+dependent_4_tax_credit_y                FEFF00630031005F00310039005B0030005D /Btn
+dependent_4_credit_others_n             FEFF00630031005F00320030005B0030005D /Btn
+occupation                              FEFF00660031005F00320033005B0030005D /Tx
+protection_pin                          FEFF00660031005F00320034005B0030005D /Tx
+spouse_occupation                       FEFF00660031005F00320035005B0030005D /Tx
+spouse_protection_pin                   FEFF00660031005F00320036005B0030005D /Tx
+preparer_name                           FEFF00660031005F00320037005B0030005D /Tx
+preparer_ptin                           FEFF00660031005F00320038005B0030005D /Tx
+preparer_firm_ein                       FEFF00660031005F00330039005B0030005D /Tx
+preparer_firm_name                      FEFF00660031005F00330030005B0030005D /Tx
+preparer_firm_phone                     FEFF00660031005F00330032005B0030005D /Tx
+preparer_third_party_y                  FEFF00630031005F00320031005B0030005D /Btn
+preparer_self_employed_y                FEFF00630031005F00320032005B0030005D /Btn
+preparer_address                        FEFF00660031005F00330031005B0030005D /Tx
+wages_salaries_tips_dollars             FEFF00660032005F00300031005B0030005D /Tx
+wages_salaries_tips_cents               FEFF00660032005F00300032005B0030005D /Tx
+tax_exempt_interest_dollars            FEFF00660032005F00300033005B0030005D /Tx
+tax_exempt_interest_cents              FEFF00660032005F00300034005B0030005D /Tx
+taxable_interest_dollars                FEFF00660032005F00300035005B0030005D /Tx
+taxable_interest_cents                  FEFF00660032005F00300036005B0030005D /Tx
+qualified_dividends_dollars             FEFF00660032005F00300037005B0030005D /Tx
+qualified_dividends_cents               FEFF00660032005F00300038005B0030005D /Tx
+ordinary_dividends_dollars              FEFF00660032005F00300039005B0030005D /Tx
+ordinary_dividends_cents                FEFF00660032005F00310030005B0030005D /Tx
+ira_pension_annuity_dollars             FEFF00660032005F00310031005B0030005D /Tx
+ira_pension_annuity_cents               FEFF00660032005F00310032005B0030005D /Tx
+taxable_ira_pension_annuity_dollars     FEFF00660032005F00310033005B0030005D /Tx
+taxable_ira_pension_annuity_cents       FEFF00660032005F00310034005B0030005D /Tx
+social_security_dollars                 FEFF00660032005F00310035005B0030005D /Tx
+social_security_cents                   FEFF00660032005F00310036005B0030005D /Tx
+taxable_social_security_dollars         FEFF00660032005F00310037005B0030005D /Tx
+taxable_social_security_cents           FEFF00660032005F00310038005B0030005D /Tx
+schedule_1_additional_income            FEFF00660032005F00310039005B0030005D /Tx
+total_income_dollars                    FEFF00660032005F00320030005B0030005D /Tx
+total_income_cents                      FEFF00660032005F00320031005B0030005D /Tx
+adjusted_gross_income_dollars           FEFF00660032005F00320032005B0030005D /Tx
+adjusted_gross_income_cents             FEFF00660032005F00320033005B0030005D /Tx
+deductions_dollars                      FEFF00660032005F00320034005B0030005D /Tx
+deductions_cents                        FEFF00660032005F00320035005B0030005D /Tx
+qualified_business_deductions_dollars   FEFF00660032005F00320036005B0030005D /Tx
+qualified_business_deductions_cents     FEFF00660032005F00320037005B0030005D /Tx
+taxable_income_dollars                  FEFF00660032005F00320038005B0030005D /Tx
+taxable_income_cents                    FEFF00660032005F00320039005B0030005D /Tx
+tax_amount                              FEFF00660032005F00330030005B0030005D /Tx
+form_8814_y                             FEFF00630032005F00300031005B0030005D /Btn
+form_4972_y                             FEFF00630032005F00300032005B0030005D /Btn
+form_other_y                            FEFF00630032005F00300033005B0030005D /Btn
+form_other                              FEFF00660032005F00330031005B0030005D /Tx
+schedule_2_y                            FEFF00630032005F00300034005B0030005D /Btn
+schedule_2_dollars                      FEFF00660032005F00330032005B0030005D /Tx
+schedule_2_cents                        FEFF00660032005F00330033005B0030005D /Tx
+child_tax_credit                        FEFF00660032005F00330034005B0030005D /Tx
+child_tax_credit_y                      FEFF00630032005F00300035005B0030005D /Btn
+schedule_3_dollars                      FEFF00660032005F00330035005B0030005D /Tx
+schedule_3_cents                        FEFF00660032005F00330036005B0030005D /Tx
+line_13_dollars                         FEFF00660032005F00330037005B0030005D /Tx
+line_13_cents                           FEFF00660032005F00330038005B0030005D /Tx
+other_taxes_dollars                     FEFF00660032005F00330039005B0030005D /Tx
+other_taxes_cents                       FEFF00660032005F00340030005B0030005D /Tx
+total_tax_dollars                       FEFF00660032005F00340031005B0030005D /Tx
+total_tax_cents                         FEFF00660032005F00340032005B0030005D /Tx
+withheld_dollars                        FEFF00660032005F00340033005B0030005D /Tx
+withheld_cents                          FEFF00660032005F00340034005B0030005D /Tx
+refundable_eic                          FEFF00660032005F00340035005B0030005D /Tx
+refundable_8812                         FEFF00660032005F00340036005B0030005D /Tx
+refundable_8863                         FEFF00660032005F00340037005B0030005D /Tx
+refundable_schedule_5                   FEFF00660032005F00340038005B0030005D /Tx
+refundable_dollars                      FEFF00660032005F00340039005B0030005D /Tx
+refundable_cents                        FEFF00660032005F00350030005B0030005D /Tx
+total_payments_dollars                  FEFF00660032005F00350031005B0030005D /Tx
+total_payments_cents                    FEFF00660032005F00350032005B0030005D /Tx
+overpaid_dollars                        FEFF00660032005F00350033005B0030005D /Tx
+overpaid_cents                          FEFF00660032005F00350034005B0030005D /Tx
+form_8888_y                             FEFF00630032005F00300036005B0030005D /Btn
+refund_dollars                          FEFF00660032005F00350035005B0030005D /Tx
+refund_cents                            FEFF00660032005F00350036005B0030005D /Tx
+routing_number                          FEFF00660032005F00350037005B0030005D /Tx
+checking_y                              FEFF00630032005F00300037005B0030005D /Btn
+savings_n                               FEFF00630032005F00300037005B0031005D /Btn
+account_number                          FEFF00660032005F00350038005B0030005D /Tx
+estimated_tax_dollars                   FEFF00660032005F00350039005B0030005D /Tx
+estimated_tax_cents                     FEFF00660032005F00360030005B0030005D /Tx
+owed_dollars                            FEFF00660032005F00360031005B0030005D /Tx
+owed_cents                              FEFF00660032005F00360032005B0030005D /Tx
+estimated_penalty_dollars               FEFF00660032005F00360033005B0030005D /Tx
+estimated_penalty_cents                 FEFF00660032005F00360034005B0030005D /Tx

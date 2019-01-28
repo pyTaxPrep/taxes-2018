@@ -1,0 +1,75 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+name                                               FEFF00660031005F0031005B0030005D /Tx
+ssn                                                FEFF00660031005F0032005B0030005D /Tx
+reserved1_dollars                                  FEFF00660031005F0033005B0030005D /Tx
+reserved_cents                                     FEFF00660031005F0034005B0030005D /Tx
+refund_dollars                                     FEFF00660031005F0035005B0030005D /Tx
+refund_cents                                       FEFF00660031005F0036005B0030005D /Tx
+alimony_dollars                                    FEFF00660031005F0037005B0030005D /Tx
+alimony_cents                                      FEFF00660031005F0038005B0030005D /Tx
+business_dollars                                   FEFF00660031005F0039005B0030005D /Tx
+business_cents                                     FEFF00660031005F00310030005B0030005D /Tx
+schedule_d_unneeded_y                              FEFF00630031005F0033005B0030005D /Btn
+capital_gain_dollars                               FEFF00660031005F00310031005B0030005D /Tx
+capital_gain_cents                                 FEFF00660031005F00310032005B0030005D /Tx
+other_gains_dollars                                FEFF00660031005F00310033005B0030005D /Tx
+other_gains_cents                                  FEFF00660031005F00310034005B0030005D /Tx
+reserved2_dollars                                  FEFF00660031005F00310035005B0030005D /Tx
+reserved2_cents                                    FEFF00660031005F00310036005B0030005D /Tx
+reserved3_dollars                                  FEFF00660031005F00310037005B0030005D /Tx
+reserved3_cents                                    FEFF00660031005F00310038005B0030005D /Tx
+rental_dollars                                     FEFF00660031005F00310039005B0030005D /Tx
+rental_cents                                       FEFF00660031005F00320030005B0030005D /Tx
+farm_dollars                                       FEFF00660031005F00320031005B0030005D /Tx
+farm_cents                                         FEFF00660031005F00320032005B0030005D /Tx
+unemployment_dollars                               FEFF00660031005F00320033005B0030005D /Tx
+unemployment_cents                                 FEFF00660031005F00320034005B0030005D /Tx
+reserved4_dollars                                  FEFF00660031005F00320035005B0030005D /Tx
+reserved4_cents                                    FEFF00660031005F00320036005B0030005D /Tx
+other_income_type                                  FEFF00660031005F00320037005B0030005D /Tx
+other_income_dollars                               FEFF00660031005F00320038005B0030005D /Tx
+other_income_cents                                 FEFF00660031005F00320039005B0030005D /Tx
+sum_income_dollars                                 FEFF00660031005F00330030005B0030005D /Tx
+sum_income_cents                                   FEFF00660031005F00330031005B0030005D /Tx
+educator_dollars                                   FEFF00660031005F00330032005B0030005D /Tx
+educator_cents                                     FEFF00660031005F00330033005B0030005D /Tx
+business_expenses_dollars                          FEFF00660031005F00330034005B0030005D /Tx
+business_expenses_cents                            FEFF00660031005F00330035005B0030005D /Tx
+hsa_dollars                                        FEFF00660031005F00330036005B0030005D /Tx
+hsa_cents                                          FEFF00660031005F00330037005B0030005D /Tx
+moving_dollars                                     FEFF00660031005F00330038005B0030005D /Tx
+moving_cents                                       FEFF00660031005F00330039005B0030005D /Tx
+self_employment_dollars                            FEFF00660031005F00340030005B0030005D /Tx
+self_employment_cents                              FEFF00660031005F00340031005B0030005D /Tx
+sep_dollars                                        FEFF00660031005F00340032005B0030005D /Tx
+sep_cents                                          FEFF00660031005F00340033005B0030005D /Tx
+se_health_dollars                                  FEFF00660031005F00340034005B0030005D /Tx
+se_health_cents                                    FEFF00660031005F00340035005B0030005D /Tx
+early_penalty_dollars                              FEFF00660031005F00340036005B0030005D /Tx
+early_penalty_cents                                FEFF00660031005F00340037005B0030005D /Tx
+alimony_ssn                                        FEFF00660031005F00340038005B0030005D /Tx
+alimony_dollars                                    FEFF00660031005F00340039005B0030005D /Tx
+alimony_cents                                      FEFF00660031005F00350030005B0030005D /Tx
+ira_dollars                                        FEFF00660031005F00350031005B0030005D /Tx
+ira_cents                                          FEFF00660031005F00350032005B0030005D /Tx
+loan_interest_dollars                              FEFF00660031005F00350033005B0030005D /Tx
+loan_interest_cents                                FEFF00660031005F00350034005B0030005D /Tx
+reserved5_dollars                                  FEFF00660031005F00350035005B0030005D /Tx
+reserved5_cents                                    FEFF00660031005F00350036005B0030005D /Tx
+reserved6_dollars                                  FEFF00660031005F00350037005B0030005D /Tx
+reserved6_cents                                    FEFF00660031005F00350038005B0030005D /Tx
+adjustments_dollars                                FEFF00660031005F00350039005B0030005D /Tx
+adjustments_cents                                  FEFF00660031005F00360030005B0030005D /Tx

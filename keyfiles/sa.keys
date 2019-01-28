@@ -1,0 +1,76 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+name                                    FEFF00660031005F0031005B0030005D /Tx
+ssn                                     FEFF00660031005F0032005B0030005D /Tx
+medical_exp_dollars                     FEFF00660031005F0033005B0030005D /Tx
+medical_exp_cents                       FEFF00660031005F0034005B0030005D /Tx
+form_1040_line_7_dollars                FEFF00660031005F0035005B0030005D /Tx
+form_1040_line_7_cents                  FEFF00660031005F0036005B0030005D /Tx
+seven_point_five_pct_dollars            FEFF00660031005F0037005B0030005D /Tx
+seven_point_five_pct_cents              FEFF00660031005F0038005B0030005D /Tx
+qualified_medical_expenses_dollars      FEFF00660031005F0039005B0030005D /Tx
+qualified_medical_expenses_cents        FEFF00660031005F00310030005B0030005D /Tx
+including_gst_y                         FEFF00630031005F0031005B0030005D /Btn
+income_sales_tax_dollars                FEFF00660031005F00310031005B0030005D /Tx
+income_sales_tax_cents                  FEFF00660031005F00310032005B0030005D /Tx
+real_estate_taxes_dollars               FEFF00660031005F00310033005B0030005D /Tx
+real_estate_taxes_cents                 FEFF00660031005F00310034005B0030005D /Tx
+property_taxes_dollars                  FEFF00660031005F00310035005B0030005D /Tx
+property_taxes_cents                    FEFF00660031005F00310036005B0030005D /Tx
+total_state_local_dollars               FEFF00660031005F00310037005B0030005D /Tx
+total_state_local_cents                 FEFF00660031005F00310038005B0030005D /Tx
+floor_taxes_dollars                     FEFF00660031005F00310039005B0030005D /Tx
+floor_taxes_cents                       FEFF00660031005F00320030005B0030005D /Tx
+other_taxes_type_1                      FEFF00660031005F00320031005B0030005D /Tx
+other_taxes_type_2                      FEFF00660031005F00320032005B0030005D /Tx
+other_taxes_dollars                     FEFF00660031005F00320033005B0030005D /Tx
+other_taxes_cents                       FEFF00660031005F00320034005B0030005D /Tx
+total_taxes_dollars                     FEFF00660031005F00320035005B0030005D /Tx
+total_taxes_cents                       FEFF00660031005F00320036005B0030005D /Tx
+home_mortgage_loan_unused_y             FEFF00630031005F0032005B0030005D /Btn
+home_mortgage_loan_interest_dollars     FEFF00660031005F00320037005B0030005D /Tx
+home_mortgage_loan_interest_cents       FEFF00660031005F00320038005B0030005D /Tx
+home_mortgage_not_1098_1                FEFF00660031005F00320039005B0030005D /Tx
+home_mortgage_not_1098_2                FEFF00660031005F00330030005B0030005D /Tx
+home_mortgage_not_1098_dollars          FEFF00660031005F00330031005B0030005D /Tx
+home_mortgage_not_1098_cents            FEFF00660031005F00330032005B0030005D /Tx
+points_not_1098_dollars                 FEFF00660031005F00330033005B0030005D /Tx
+points_not_1098_cents                   FEFF00660031005F00330034005B0030005D /Tx
+reserved_dollars                        FEFF00660031005F00330035005B0030005D /Tx
+reserved_cents                          FEFF00660031005F00330036005B0030005D /Tx
+total_home_interest_dollars             FEFF00660031005F00330037005B0030005D /Tx
+total_home_interest_cents               FEFF00660031005F00330038005B0030005D /Tx
+investment_interest_dollars             FEFF00660031005F00330039005B0030005D /Tx
+investment_interest_cents               FEFF00660031005F00340030005B0030005D /Tx
+total_interest_dollars                  FEFF00660031005F00340031005B0030005D /Tx
+total_interest_cents                    FEFF00660031005F00340032005B0030005D /Tx
+charity_monies_dollars                  FEFF00660031005F00340033005B0030005D /Tx
+charity_monies_cents                    FEFF00660031005F00340034005B0030005D /Tx
+charity_others_dollars                  FEFF00660031005F00340035005B0030005D /Tx
+charity_others_cents                    FEFF00660031005F00340036005B0030005D /Tx
+charity_carryover_dollars               FEFF00660031005F00340037005B0030005D /Tx
+charity_carryover_cents                 FEFF00660031005F00340038005B0030005D /Tx
+charity_total_dollars                   FEFF00660031005F00340039005B0030005D /Tx
+charity_total_cents                     FEFF00660031005F00350030005B0030005D /Tx
+casualty_theft_losses_dollars           FEFF00660031005F00350031005B0030005D /Tx
+casualty_theft_losses_cents             FEFF00660031005F00350032005B0030005D /Tx
+other_itemized_1                        FEFF00660031005F00350033005B0030005D /Tx
+other_itemized_2                        FEFF00660031005F00350034005B0030005D /Tx
+other_itemized_3                        FEFF00660031005F00350035005B0030005D /Tx
+other_itemized_dollars                  FEFF00660031005F00350036005B0030005D /Tx
+other_itemized_cents                    FEFF00660031005F00350037005B0030005D /Tx
+total_itemized_dollars                  FEFF00660031005F00350038005B0030005D /Tx
+total_itemized_cents                    FEFF00660031005F00350039005B0030005D /Tx
+itemize_always_y                        FEFF00630031005F0033005B0030005D /Btn

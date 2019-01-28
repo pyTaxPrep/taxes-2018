@@ -1,0 +1,64 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+name                FEFF00660031005F0031005B0030005D /Tx
+ssn                 FEFF00660031005F0032005B0030005D /Tx
+profession          FEFF00660031005F0033005B0030005D /Tx
+code                FEFF00660031005F0034005B0030005D /Tx
+business_name       FEFF00660031005F0035005B0030005D /Tx
+ein                 FEFF00660031005F0036005B0030005D /Tx
+business_addr_1     FEFF00660031005F0037005B0030005D /Tx
+business_addr_2     FEFF00660031005F0038005B0030005D /Tx
+need_1099_y         FEFF00630031005F0031005B0030005D /Btn
+need_1099_n         FEFF00630031005F0031005B0031005D /Btn
+filed_1099_y        FEFF00630031005F0032005B0030005D /Btn
+filed_1099_n        FEFF00630031005F0032005B0031005D /Btn
+statutory_emp_y     FEFF00630031005F0033005B0030005D /Btn
+receipts_dollars    FEFF00660031005F0039005B0030005D /Tx
+receipts_cents      FEFF00660031005F00310030005B0030005D /Tx
+expenses_dollars    FEFF00660031005F00310031005B0030005D /Tx
+expenses_cents      FEFF00660031005F00310032005B0030005D /Tx
+net_profit_dollars  FEFF00660031005F00310033005B0030005D /Tx
+net_profit_cents    FEFF00660031005F00310034005B0030005D /Tx
+vehicle_date        FEFF00660031005F00310035005B0030005D /Tx
+vehicle_miles_bus   FEFF00660031005F00310036005B0030005D /Tx
+vehicle_miles_com   FEFF00660031005F00310037005B0030005D /Tx
+vehicle_miles_oth   FEFF00660031005F00310038005B0030005D /Tx
+vehicle_personal_y  FEFF00630031005F0034005B0030005D /Btn
+vehicle_personal_n  FEFF00630031005F0034005B0031005D /Btn
+vehicle_another_y   FEFF00630031005F0035005B0030005D /Btn
+vehicle_another_n   FEFF00630031005F0035005B0031005D /Btn
+vehicle_evidence_y  FEFF00630031005F0036005B0030005D /Btn
+vehicle_evidence_n  FEFF00630031005F0036005B0031005D /Btn
+vehicle_written_y   FEFF00630031005F0037005B0030005D /Btn
+vehicle_written_n   FEFF00630031005F0037005B0031005D /Btn
+wk_meals_dollars    FEFF00660032005F0031005B0030005D /Tx
+wk_meals_cents      FEFF00660032005F0032005B0030005D /Tx
+wk_b_desc           FEFF00660032005F0033005B0030005D /Tx
+wk_b_dollars        FEFF00660032005F0034005B0030005D /Tx
+wk_b_cents          FEFF00660032005F0035005B0030005D /Tx
+wk_c_desc           FEFF00660032005F0036005B0030005D /Tx
+wk_c_dollars        FEFF00660032005F0037005B0030005D /Tx
+wk_c_cents          FEFF00660032005F0038005B0030005D /Tx
+wk_d_desc           FEFF00660032005F0039005B0030005D /Tx
+wk_d_dollars        FEFF00660032005F00310030005B0030005D /Tx
+wk_d_cents          FEFF00660032005F00310031005B0030005D /Tx
+wk_e_desc           FEFF00660032005F00310032005B0030005D /Tx
+wk_e_dollars        FEFF00660032005F00310033005B0030005D /Tx
+wk_e_cents          FEFF00660032005F00310034005B0030005D /Tx
+wk_f_desc           FEFF00660032005F00310035005B0030005D /Tx
+wk_f_dollars        FEFF00660032005F00310036005B0030005D /Tx
+wk_f_cents          FEFF00660032005F00310037005B0030005D /Tx
+wk_total_dollars    FEFF00660032005F00310038005B0030005D /Tx
+wk_total_cents      FEFF00660032005F00310039005B0030005D /Tx

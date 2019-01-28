@@ -1,0 +1,30 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+name                            FEFF00660031005F0031005B0030005D /Tx
+ssn                             FEFF00660031005F0032005B0030005D /Tx
+farm_profit_dollars             FEFF00660031005F0033005B0030005D /Tx
+farm_profit_cents               FEFF00660031005F0034005B0030005D /Tx
+benefits_dollars                FEFF00660031005F0035005B0030005D /Tx
+benefits_cents                  FEFF00660031005F0036005B0030005D /Tx
+line_2_dollars                  FEFF00660031005F0037005B0030005D /Tx
+line_2_cents                    FEFF00660031005F0038005B0030005D /Tx
+line_3_dollars                  FEFF00660031005F0039005B0030005D /Tx
+line_3_cents                    FEFF00660031005F00310030005B0030005D /Tx
+line_4_dollars                  FEFF00660031005F00310031005B0030005D /Tx
+line_4_cents                    FEFF00660031005F00310032005B0030005D /Tx
+line_5_dollars                  FEFF00660031005F00310033005B0030005D /Tx
+line_5_cents                    FEFF00660031005F00310034005B0030005D /Tx
+line_6_dollars                  FEFF00660031005F00310035005B0030005D /Tx
+line_6_cents                    FEFF00660031005F00310036005B0030005D /Tx

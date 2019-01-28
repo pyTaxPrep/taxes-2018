@@ -1,0 +1,113 @@
+{
+        "ssn"            : "123-45-6789",
+        "name"           : "Mickey Mouse",
+        "name_first"     : "Mickey",
+        "name_middle"    : "Malted",
+        "name_middle_i"  : "M",
+        "name_last"      : "Mouse",
+
+        "address"        : "123 Foo Bar",
+        "address_apt"    : "A",
+        "address_city"   : "Baz", 
+        "address_state"  : "ST",
+        "address_zip"    : "12345",
+
+        "occupation"     : "Entertainer",
+
+        "w2"             : [{"income"           : 80000,
+                             "federal_withheld" : 1000,
+                             "state_withheld"   : 500}],
+
+        "1099_misc"      : [{"other_income" : 25012}],
+
+        "1099_r"         : [
+                            {"type" : "rollover",
+                             "amount" : 1000.50},
+                            {"type" : "backdoor_conversion",
+                             "contribution" : 5500.0,
+                             "converted"    : 5550.0,
+                             "total_basis"  : 100.0,
+                             "nonroth_eoy"  : 100.0,
+                             "distributions" : 0.0
+                             }
+                           ],
+
+        "1099_int"       : [{"institution"     : "Bank 1",
+                             "interest_income" : 100.10},
+                            {"institution"     : "Bank 2",
+                             "interest_income" : 200.20},
+                            {"institution"     : "Bank 3",
+                             "interest_income" : 300.30},
+                            {"institution"     : "Bank 4",
+                             "interest_income" : 400.40}],
+
+        "1099_div"       : [{"institution"        : "Bank 1",
+                             "total_ordinary"     : 500.50,
+                             "total_qualified"    : 600.60,
+                             "total_capital_gain" : 700.70},
+                            {"institution"        : "Bank 2",
+                             "total_ordinary"     : 800.50,
+                             "total_qualified"    : 900.60,
+                             "total_capital_gain" : 1000.70},
+                            {"institution"        : "Bank 3",
+                             "total_ordinary"     : 1100.50,
+                             "total_qualified"    : 1200.60,
+                             "total_capital_gain" : 1300.70}],
+        
+        "business_exp"   : [{"description"   : "Expense 1",
+                             "amount"        : 100.01},
+                            {"description"   : "Expense 2",
+                             "amount"        : 100.01},
+                            {"description"   : "Expense 3",
+                             "amount"        : 100.01}],
+
+        "vehicle"        : {"dates"        : "1/1/18 - 12/31/18",
+                            "mileage"      : 1000,
+                            "mileage_rate" : 0.545},
+                           
+        "meals"          : 500.05,
+
+        "profession"      : "profession",
+        "profession_code" : "123456",
+
+        "estimated_fed"  : [{"date"   : "2018-04-15",
+                             "amount" : 2000},
+                            {"date"   : "2018-06-15",
+                             "amount" : 2000},
+                            {"date"   : "2018-09-15",
+                             "amount" : 2000},
+                            {"date"   : "2019-01-15",
+                             "amount" : 2000}],
+
+        "estimated_state" : [{"date"   : "2018-04-15",
+                              "amount" : 500},
+                             {"date"   : "2018-06-15",
+                              "amount" : 500},
+                             {"date"   : "2018-09-15",
+                              "amount" : 500},
+                             {"date"   : "2019-01-15",
+                              "amount" : 500}],
+
+        "state_due_last_year" : 100,
+
+        "medical_expenses" : 512.23,
+
+        "donations_cash"   : [{"organization" : "Organization 1",
+                               "amount"       : 500},
+                              {"organization" : "Organization 2",
+                               "amount"       : 410},
+                              {"organization" : "Organization 3",
+                               "amount"       : 250}],
+
+        "donations_noncash" : [{"organization" : "Organization 1",
+                                "amount"       : 100},
+                               {"organization" : "Organization 2",
+                                "amount"       : 200},
+                               {"organization" : "Organization 3",
+                                "amount"       : 300}],
+
+
+
+        "sep_percentage"   : 0.10
+
+}

@@ -1,0 +1,25 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+profits                 SI_Amount /Tx
+se_deduction            SI_Amount02 /Tx
+adj_profits             SI_Amount03 /Tx
+percentage              SI_Percentage /Tx
+factor                  SI_Percentage02 /Tx
+adj_earned              SI_Amount04 /Tx
+max_earned              SI_Amount05 /Tx
+final_earned            SI_Amount06 /Tx
+prelim_contrib_amt      SI_Amount07 /Tx
+max_contrib_amt         SI_Amount08 /Tx
+final_contrib_amt       SI_Amount09 /Tx
