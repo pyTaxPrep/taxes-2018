@@ -78,28 +78,40 @@ data = utils.parse_values()
 
 ###################################
 
-def calculate_tax_due(taxable_income):
-
-    tax_table = json.load(open('tables/federal_table.json'))
-
-    for lo, hi, amt in tax_table:
-        if taxable_income >= lo and taxable_income < hi:
-            return amt
-
-    if taxable_income >= 100000 and taxable_income < 157500:
-        tax_due = taxable_income * 0.24 - 5710.50
-    elif taxable_income >= 157500 and taxable_income < 200000:
-        tax_due = taxable_income * 0.32 - 18310.50
-    elif taxable_income >= 20000 and taxable_income < 200000:
-        tax_due = taxable_income * 0.35 - 24310.50
-    elif taxable_income >= 50000 and taxable_income < 200000:
-        tax_due = taxable_income * 0.37 - 34310.50
-    else:
-        raise Exception("Error calculating federal tax due!")
-
-    return tax_due
+def qualified_business_deduction(taxable_income, schedule_1):
     
-def build_data(short_circuit = False):
+    if 'qbi_deduction' not in data:
+        return 0
+    if data['qbi_deduction'] is not True:
+        return 0
+
+    if taxable_income > 157500:
+        raise Exception("QBI Deduction -- Not Implemented!")
+
+    # https://www.irs.gov/newsroom/tax-cuts-and-jobs-act-provision-11011-section-199a-qualified-business-income-deduction-faqs
+    
+    # The deduction is the lesser of:
+
+    # A) 20 percent of the taxpayer’s QBI, plus 20 percent of the
+    # taxpayer’s qualified real estate investment trust (REIT)
+    # dividends and qualified publicly traded partnership (PTP) income
+    qbi = utils.dollars_cents_to_float(schedule_1['business_dollars'],
+                                       schedule_1['business_cents'])
+    option_a = qbi * 0.20
+
+
+    # B) 20 percent of the taxpayer’s taxable income minus net capital
+    # gains.
+    capital_gains = 0
+    if 'capital_gain_dollars' in schedule_1:
+        capital_gains = utils.dollars_cents_to_float(schedule_1['capital_gain_dollars'],
+                                                     schedule_1['capital_gain_cents'])
+    option_b = 0.20 * (taxable_income - capital_gains)
+
+    deduction = min(option_a, option_b)
+
+    return deduction
+
 
     data_dict = {}
 
