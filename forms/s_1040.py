@@ -182,7 +182,7 @@ def build_data(short_circuit = ''):
     additional_income = utils.dollars_cents_to_float(schedule_1['sum_income_dollars'],
                                                      schedule_1['sum_income_cents'])
 
-    data_dict['schedule_1_additional_income'] = '%.2f' % (additional_income)
+    data_dict['schedule_1_additional_income'] = str(int(round(additional_income, 0))) #'%.2f' % (additional_income)
 
     data_dict['_s1_income_dollars'] = schedule_1['sum_income_dollars']
     data_dict['_s1_income_cents'] = schedule_1['sum_income_cents']
