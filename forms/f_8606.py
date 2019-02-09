@@ -106,7 +106,7 @@ def build_data():
                           data_dict)
 
     quotient = line_5 / line_9
-    quotient_str = '%.6f' % (quotient)
+    quotient_str = '%.5f' % (quotient)
     sp = quotient_str.split('.')
     data_dict['quotient_int'] = sp[0]
     data_dict['quotient_decimal'] = str(sp[1]) + ' '
