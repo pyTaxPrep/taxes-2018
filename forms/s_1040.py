@@ -68,9 +68,11 @@ from . import utils
 from . import a_1040
 from . import b_1040
 from . import s1_1040
+from . import s3_1040
 from . import s4_1040
 from . import s5_1040
 from . import f_8606
+from . import tax_worksheet
 
 data = utils.parse_values()
 
