@@ -25,6 +25,7 @@ import forms.se_1040
 import forms.cez_1040
 import forms.sep_ira
 import forms.f_8606
+import forms.s_1040v
 import forms.tax_worksheet
 
 from PyPDF2 import PdfFileMerger
@@ -51,6 +52,7 @@ def fill_forms():
     forms.cez_1040.fill_in_form()
     forms.sep_ira.fill_in_form()
     forms.f_8606.fill_in_form()
+    forms.s_1040v.fill_in_form()
     forms.tax_worksheet.fill_in_form()
 
     pdfs = [ os.path.join('filled', 'f1040.pdf'),
@@ -64,6 +66,7 @@ def fill_forms():
              os.path.join('filled', 'f1040sce.pdf'),
              os.path.join('filled', 'f1040sse.pdf'),
              os.path.join('filled', 'f8606.pdf'),
+             os.path.join('filled', 'f1040v.pdf'),
              os.path.join('filled', 'SEP_IRA_Worksheet.pdf')]
 
     merger = PdfFileMerger()
