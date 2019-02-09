@@ -341,11 +341,24 @@ def dollars_cents_to_float(d, c):
     return float(d) + float(c) * .01
 
 def float_to_dollars_cents(f):
+    # Python 3 uses bankers rounding (to the nearest even),
+    # but the IRS always rounds 50 cents upwards.
+    
     f_str = '%.2f' % (round(f, 2))
     sp = f_str.split('.')
     d = int(sp[0])
     c = int(sp[1])
+    
+    # Round and discard cents
+    if (c >= 50):
+        d += 1
+    c = 0
+
+    #d = int(round(f, 0))
+    #c = 0
     return d, c
+
+    #return d, c
 
 def subtract_dc(d1, c1, d2, c2):
     v1 = d1 + c1 * .01
