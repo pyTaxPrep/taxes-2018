@@ -63,10 +63,6 @@ def build_data():
     total_dividend = sum( [ x['total_ordinary'] for x in data['1099_div'] ] )
     utils.add_keyed_float(total_dividend, 'dividend_total', data_dict)
 
-    data_dict['foreign_acct_n']  = True
-    data_dict['fbar_needed_n']   = True
-    data_dict['foreign_trust_n'] = True
-
     return data_dict
 
 def fill_in_form():

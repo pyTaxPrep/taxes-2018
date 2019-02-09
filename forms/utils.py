@@ -25,6 +25,8 @@ import json
 import pdfrw
 import reportlab.pdfgen.canvas
 
+ROUND_TO_DOLLARS = True
+
 # PDF Format Keys
 ANNOT_KEY = '/Annots'
 ANNOT_FIELD_KEY = '/T'
@@ -130,8 +132,13 @@ def get_overlay(basename, data_dict, keyfile):
     data = io.BytesIO()
     pdf = reportlab.pdfgen.canvas.Canvas(data)
 
+    if '_width' not in data_dict:
+        data_dict['_width'] = 8
+
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if annotation[ANNOT_FIELD_KEY]:
@@ -149,20 +156,35 @@ def get_overlay(basename, data_dict, keyfile):
                         
                     if readable in data_dict:
                         if ftype == '/Btn':
-                            if data_dict[readable] == True:
-                                value = 'X'
-                            else:
-                                value = 'Blank'
+                            value = 'X'
                         else:
-                            if readable.endswith('_cents'):
-                                value = str(data_dict[readable]).zfill(2)
-                            elif readable.endswith('_dollars'):
-                                value = str(data_dict[readable])
-                                value = commaify(value)
-                                value = ' ' * (8 - len(value)) + value
+                            if ROUND_TO_DOLLARS:
+                                if readable.endswith('_cents'):
+                                    value = str(data_dict[readable]).zfill(2)
+                                    value = ''
+                                elif readable.endswith('_dollars'):
+                                    cent_key = readable.replace('_dollars', '_cents')
+                                    cents = 0
+                                    if cent_key in data_dict:
+                                        cents = data_dict[cent_key]
+                                    if cents >= 50:
+                                        data_dict[readable] += 1
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
+                                    value = ' ' * (data_dict['_width'] - len(value)) + value
+                                else:
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
                             else:
-                                value = str(data_dict[readable])
-                                value = commaify(value)
+                                if readable.endswith('_cents'):
+                                    value = str(data_dict[readable]).zfill(2)
+                                elif readable.endswith('_dollars'):
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
+                                    value = ' ' * (data_dict['_width'] - len(value)) + value
+                                else:
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
 
                         # This is a hack. But so is telling people to put text in places
                         # where there aren't fillable fields.
@@ -209,6 +231,8 @@ def do_buttons(basename, data_dict, keyfile):
 
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if not annotation[ANNOT_FIELD_KEY]:
@@ -271,6 +295,8 @@ def dump_fields(fp):
     
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if annotation[ANNOT_FIELD_KEY]:
@@ -285,6 +311,28 @@ def dump_fields(fp):
                         print ('Text: ', annotation[PARENT_KEY][ANNOT_FIELD_KEY])
                         print (annotation[PARENT_KEY][ANNOT_VAL_KEY])
 
+def calculate_tax_due(taxable_income):
+
+    tax_table = json.load(open('tables/federal_table.json'))
+
+    for lo, hi, amt in tax_table:
+        if taxable_income >= lo and taxable_income < hi:
+            return amt
+
+    if taxable_income >= 100000 and taxable_income < 157500:
+        tax_due = taxable_income * 0.24 - 5710.50
+    elif taxable_income >= 157500 and taxable_income < 200000:
+        tax_due = taxable_income * 0.32 - 18310.50
+    elif taxable_income >= 20000 and taxable_income < 200000:
+        tax_due = taxable_income * 0.35 - 24310.50
+    elif taxable_income >= 50000 and taxable_income < 200000:
+        tax_due = taxable_income * 0.37 - 34310.50
+    else:
+        raise Exception("Error calculating federal tax due!")
+
+    return tax_due
+
+
 '''
 Utility functions for manipulating money values and turning
 them into dollar, cent string tuples.
@@ -293,11 +341,24 @@ def dollars_cents_to_float(d, c):
     return float(d) + float(c) * .01
 
 def float_to_dollars_cents(f):
+    # Python 3 uses bankers rounding (to the nearest even),
+    # but the IRS always rounds 50 cents upwards.
+    
     f_str = '%.2f' % (round(f, 2))
     sp = f_str.split('.')
     d = int(sp[0])
     c = int(sp[1])
+    
+    # Round and discard cents
+    if (c >= 50):
+        d += 1
+    c = 0
+
+    #d = int(round(f, 0))
+    #c = 0
     return d, c
+
+    #return d, c
 
 def subtract_dc(d1, c1, d2, c2):
     v1 = d1 + c1 * .01

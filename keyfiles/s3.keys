@@ -1,0 +1,36 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+name                                    FEFF00660031005F0031005B0030005D /Tx
+ssn                                     FEFF00660031005F0032005B0030005D /Tx
+foreign_tax_credit_dollars              FEFF00660031005F0033005B0030005D /Tx
+foreign_tax_credit_cents                FEFF00660031005F0034005B0030005D /Tx
+child_care_dollars                      FEFF00660031005F0035005B0030005D /Tx
+child_care_cents                        FEFF00660031005F0036005B0030005D /Tx
+education_dollars                       FEFF00660031005F0037005B0030005D /Tx
+education_cents                         FEFF00660031005F0038005B0030005D /Tx
+retirement_dollars                      FEFF00660031005F0039005B0030005D /Tx
+retirement_cents                        FEFF00660031005F00310030005B0030005D /Tx
+reserved_dollars                        FEFF00660031005F00310031005B0030005D /Tx
+reserved_cents                          FEFF00660031005F00310032005B0030005D /Tx
+energy_dollars                          FEFF00660031005F00310033005B0030005D /Tx
+energy_cents                            FEFF00660031005F00310034005B0030005D /Tx
+form_3800_y                             FEFF00630031005F0031005B0030005D /Btn
+form_8801_y                             FEFF00630031005F0031005B0031005D /Btn
+form_other_y                            FEFF00630031005F0031005B0032005D /Btn
+form_other                              FEFF00660031005F00310035005B0030005D /Tx
+other_credits_dollars                   FEFF00660031005F00310036005B0030005D /Tx
+other_credits_cents                     FEFF00660031005F00310037005B0030005D /Tx
+nonrefundable_total_dollars             FEFF00660031005F00310038005B0030005D /Tx
+nonrefundable_total_cents               FEFF00660031005F00310039005B0030005D /Tx

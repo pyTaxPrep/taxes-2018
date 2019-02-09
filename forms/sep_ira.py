@@ -42,8 +42,8 @@ def build_data():
     
     profits = utils.dollars_cents_to_float(schedule_c['net_profit_dollars'],
                                            schedule_c['net_profit_cents'])
-    se_deduction = utils.dollars_cents_to_float(schedule_se['line_6_dollars'],
-                                                schedule_se['line_6_cents'])
+    se_deduction = utils.dollars_cents_to_float(schedule_se['_se_deduction_dollars'],
+                                                schedule_se['_se_deduction_cents'])
     adj_profits = profits - se_deduction
     adj_earned = adj_profits / float(data_dict['factor'])
     max_earned = 280000.0

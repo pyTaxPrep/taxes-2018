@@ -14,60 +14,46 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-Fills in a Form 1040 Schedule 4.
+Fills in a Form 1040V (Payment Voucher)
 
-Relies on the following forms:
-    - Schedule SE
-
-The following values must be defined in data.json (in addition to any
-requirements for the forms listed above):
-    => name
-    => ssn
-
-Currently, it'll fill in the line for the self employment tax.
+Relies on a full Schedule 1040.
 '''
 
 
 from . import utils
-from . import se_1040
+from . import s_1040
 
 data = utils.parse_values()
 
 ###################################
 
-
-
-    
 def build_data():
 
-    schedule_se = se_1040.build_data()
+    form_1040 = s_1040.build_data()
 
     data_dict = {
-        'name'             : data['name'],
         'ssn'              : data['ssn'],
+        'first_and_initial' : data['name_first'] + ' ' + data['name_middle_i'],
+        'last'              : data['name_last'],
+        'address'           : data['address'],
+        'city_state_zip'    : (data['address_city'] 
+                               + ', ' + data['address_state'] 
+                               + ' ' + data['address_zip']),
         }
+    
+    if 'apartment' in data:
+        data_dict['apartment'] = data['apartment']
 
-    # Set tax lines here
-    data_dict['se_tax_dollars'], data_dict['se_tax_cents'] =\
-        schedule_se['_se_tax_dollars'], schedule_se['_se_tax_cents']
-
-    # Sum up taxes
-    taxes = ['se_tax', 'ss_medicare', 'retirements',
-             'household_emp', 'homebuyer', 
-             'healthcare',
-             'additional_taxes',
-             'net_tax_liability']
-
-    utils.add_keyed_float(utils.add_fields(data_dict, taxes),
-                          'total_other_taxes',
-                          data_dict )
+    utils.add_keyed_float(form_1040['_owed'],
+                          'pay',
+                          data_dict)
 
     return data_dict
 
 def fill_in_form():
     data_dict = build_data()
-    basename = 'f1040s4.pdf'
-    utils.write_fillable_pdf(basename, data_dict, 's4.keys')
+    basename = 'f1040v.pdf'
+    utils.write_fillable_pdf(basename, data_dict, 'f1040v.keys')
 
 
 if __name__ == '__main__':

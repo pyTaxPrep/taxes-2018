@@ -54,7 +54,7 @@ def build_data():
         'ssn'              : data['ssn']
         }
 
-    form_1040 = s_1040.build_data(short_circuit = True)
+    form_1040 = s_1040.build_data(short_circuit = 'Schedule A')
 
     medical_expenses = 0
     if 'medical_expenses' in data:

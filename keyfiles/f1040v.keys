@@ -1,0 +1,28 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ssn                               FEFF00660031005F00300031005B0030005D /Tx
+joint_ssn                         FEFF00660031005F00300032005B0030005D /Tx
+pay_dollars                       FEFF00660031005F00300033005B0030005D /Tx
+pay_cents                         FEFF00660031005F00300034005B0030005D /Tx
+first_and_initial                 FEFF00660031005F00300035005B0030005D /Tx
+last                              FEFF00660031005F00300036005B0030005D /Tx
+joint_first_and_initial           FEFF00660031005F00300037005B0030005D /Tx
+joint_last                        FEFF00660031005F00300038005B0030005D /Tx
+address                           FEFF00660031005F00300039005B0030005D /Tx
+apartment                         FEFF00660031005F00310030005B0030005D /Tx
+city_state_zip                    FEFF00660031005F00310031005B0030005D /Tx
+foreign_country                   FEFF00660031005F00310032005B0030005D /Tx
+foreign_state                     FEFF00660031005F00310033005B0030005D /Tx
+foreign_zip                       FEFF00660031005F00310034005B0030005D /Tx

@@ -204,3 +204,11 @@ Implementation Details:
         schedule B.) Alternately, it might come from data.json (like
         what we do for reporting 1099_div's for qualified_dividends).
 
+
+Change Log
+==========
+
+1.1: Added support for 1040-V, Qualified Business Income Deduction,
+     Tax Worksheet, and Schedule 3. Fixed lots of small bugs.
+
+1.0: Initial Release

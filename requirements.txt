@@ -1,2 +1,3 @@
 pdfrw
 reportlab
+PyPDF2
