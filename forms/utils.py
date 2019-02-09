@@ -156,15 +156,33 @@ def get_overlay(basename, data_dict, keyfile):
                         if ftype == '/Btn':
                             value = 'X'
                         else:
-                            if readable.endswith('_cents'):
-                                value = str(data_dict[readable]).zfill(2)
-                            elif readable.endswith('_dollars'):
-                                value = str(data_dict[readable])
-                                value = commaify(value)
-                                value = ' ' * (8 - len(value)) + value
+                            if ROUND_TO_DOLLARS:
+                                if readable.endswith('_cents'):
+                                    value = str(data_dict[readable]).zfill(2)
+                                    value = ''
+                                elif readable.endswith('_dollars'):
+                                    cent_key = readable.replace('_dollars', '_cents')
+                                    cents = 0
+                                    if cent_key in data_dict:
+                                        cents = data_dict[cent_key]
+                                    if cents >= 50:
+                                        data_dict[readable] += 1
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
+                                    value = ' ' * (data_dict['_width'] - len(value)) + value
+                                else:
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
                             else:
-                                value = str(data_dict[readable])
-                                value = commaify(value)
+                                if readable.endswith('_cents'):
+                                    value = str(data_dict[readable]).zfill(2)
+                                elif readable.endswith('_dollars'):
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
+                                    value = ' ' * (data_dict['_width'] - len(value)) + value
+                                else:
+                                    value = str(data_dict[readable])
+                                    value = commaify(value)
 
                         # This is a hack. But so is telling people to put text in places
                         # where there aren't fillable fields.
