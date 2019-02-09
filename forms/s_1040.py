@@ -112,6 +112,8 @@ def qualified_business_deduction(taxable_income, schedule_1):
 
     return deduction
 
+    
+def build_data(short_circuit = ''):
 
     data_dict = {}
 
@@ -200,7 +202,7 @@ def qualified_business_deduction(taxable_income, schedule_1):
 
     utils.add_keyed_float(agi, 'adjusted_gross_income', data_dict)
 
-    if short_circuit:
+    if short_circuit == 'Schedule A':
         return data_dict
 
     # Note: we can't calculate the Schedule A until after this point,
@@ -215,8 +217,8 @@ def qualified_business_deduction(taxable_income, schedule_1):
     taxable_income = agi - deduction
     utils.add_keyed_float(taxable_income, 'taxable_income', data_dict)
 
-    tax_due = calculate_tax_due(taxable_income)
-    utils.add_keyed_float(tax_due, 'line_13', data_dict)
+    if short_circuit == 'Tax Worksheet':
+        return data_dict
 
     
     other_taxes = utils.dollars_cents_to_float(schedule_4['total_other_taxes_dollars'],
