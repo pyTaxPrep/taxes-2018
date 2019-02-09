@@ -282,6 +282,7 @@ def build_data(short_circuit = ''):
 
 def fill_in_form():
     data_dict = build_data()
+    data_dict['_width'] = 9
     basename = 'f1040.pdf'
     utils.write_fillable_pdf(basename, data_dict, 's1040.keys')
 
