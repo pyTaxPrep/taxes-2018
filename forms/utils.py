@@ -305,6 +305,30 @@ def dump_fields(fp):
                         print ('Text: ', annotation[PARENT_KEY][ANNOT_FIELD_KEY])
                         print (annotation[PARENT_KEY][ANNOT_VAL_KEY])
 
+def calculate_tax_due(taxable_income):
+
+    tax_table = json.load(open('tables/federal_table.json'))
+
+    for lo, hi, amt in tax_table:
+        if taxable_income >= lo and taxable_income < hi:
+            return amt
+
+    if taxable_income >= 100000 and taxable_income < 157500:
+        print ("Taxable Income", taxable_income)
+        tax_due = taxable_income * 0.24 - 5710.50
+        print ("Tax Due", tax_due)
+    elif taxable_income >= 157500 and taxable_income < 200000:
+        tax_due = taxable_income * 0.32 - 18310.50
+    elif taxable_income >= 20000 and taxable_income < 200000:
+        tax_due = taxable_income * 0.35 - 24310.50
+    elif taxable_income >= 50000 and taxable_income < 200000:
+        tax_due = taxable_income * 0.37 - 34310.50
+    else:
+        raise Exception("Error calculating federal tax due!")
+
+    return tax_due
+
+
 '''
 Utility functions for manipulating money values and turning
 them into dollar, cent string tuples.
