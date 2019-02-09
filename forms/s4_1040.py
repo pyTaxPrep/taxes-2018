@@ -49,7 +49,7 @@ def build_data():
 
     # Set tax lines here
     data_dict['se_tax_dollars'], data_dict['se_tax_cents'] =\
-        schedule_se['line_5_dollars'], schedule_se['line_5_cents']
+        schedule_se['_se_tax_dollars'], schedule_se['_se_tax_cents']
 
     # Sum up taxes
     taxes = ['se_tax', 'ss_medicare', 'retirements',
