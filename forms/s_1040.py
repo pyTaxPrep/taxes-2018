@@ -233,7 +233,12 @@ def build_data(short_circuit = ''):
     if short_circuit == 'Tax Worksheet':
         return data_dict
 
-    
+    worksheet = tax_worksheet.build_data()
+    tax_due = worksheet['final_tax_on_income_unrounded']
+    data_dict['tax_amount'] = str(int(round(tax_due, 0))) + ' '
+
+    utils.add_keyed_float(tax_due, 'line_11', data_dict)
+
     other_taxes = utils.dollars_cents_to_float(schedule_4['total_other_taxes_dollars'],
                                                schedule_4['total_other_taxes_cents'])
 
