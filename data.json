@@ -15,6 +15,7 @@
         "occupation"     : "Entertainer",
 
         "w2"             : [{"income"           : 80000,
+                             "ss_wages"         : 80000,
                              "federal_withheld" : 1000,
                              "state_withheld"   : 500}],
 
