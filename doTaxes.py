@@ -25,13 +25,19 @@ import forms.se_1040
 import forms.cez_1040
 import forms.sep_ira
 import forms.f_8606
+import forms.tax_worksheet
+
+from PyPDF2 import PdfFileMerger
 import argparse
 import sys
+import os
 
 def main():
             
+    parser = argparse.ArgumentParser(description='A python based tax filing solution')
     fill_forms()
-    print('Your tax forms are now filled out and available in the filled directory.')
+
+    print('Your tax forms are now filled out, and available in the filled directory.')
 
 def fill_forms():
     forms.s_1040.fill_in_form()
@@ -45,6 +51,28 @@ def fill_forms():
     forms.cez_1040.fill_in_form()
     forms.sep_ira.fill_in_form()
     forms.f_8606.fill_in_form()
+    forms.tax_worksheet.fill_in_form()
+
+    pdfs = [ os.path.join('filled', 'f1040.pdf'),
+             os.path.join('filled', 'f1040s1.pdf'),
+             os.path.join('filled', 'f1040s3.pdf'),
+             os.path.join('filled', 'f1040s4.pdf'),
+             os.path.join('filled', 'f1040s5.pdf'),
+             os.path.join('filled', 'tax_worksheet.pdf'),
+             os.path.join('filled', 'f1040sa.pdf'),
+             os.path.join('filled', 'f1040sb.pdf'),
+             os.path.join('filled', 'f1040sce.pdf'),
+             os.path.join('filled', 'f1040sse.pdf'),
+             os.path.join('filled', 'f8606_2.pdf'),
+             os.path.join('filled', 'SEP_IRA_Worksheet.pdf')]
+
+    merger = PdfFileMerger()
+    for pdf in pdfs:
+        merger.append(open(pdf, 'rb'))
+
+    with open( os.path.join('filled', 'Tax_Return.pdf'), 'wb' ) as fd:
+        merger.write(fd)
+
 
 if __name__ == '__main__':
     main()
