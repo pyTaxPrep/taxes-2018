@@ -59,6 +59,13 @@ def build_data():
     data_dict['self_employment_dollars'] = schedule_se['_se_deduction_dollars']
     data_dict['self_employment_cents'] = schedule_se['_se_deduction_cents']
 
+    if '1099_div' in data:
+        utils.add_keyed_float( sum( [ x['total_capital_gain'] for x in data['1099_div'] ] ),
+                               'capital_gain',
+                               data_dict)
+
+        data_dict['schedule_d_unneeded_y'] = True
+
     data_dict['sep_dollars'], data_dict['sep_cents'] =\
         utils.float_to_dollars_cents(float(sep_calcs['final_contrib_amt']))
 
