@@ -266,7 +266,7 @@ def build_data(short_circuit = ''):
     total_credits = utils.dollars_cents_to_float(schedule_5['total_credits_dollars'],
                                                  schedule_5['total_credits_cents'])
 
-    data_dict['refundable_schedule_5'] = '%.2f' % (total_credits)
+    data_dict['refundable_schedule_5'] = str(int(round(total_credits, 0))) #'%.2f' % (total_credits)
 
     utils.add_keyed_float(total_credits, 'refundable', data_dict)
 
