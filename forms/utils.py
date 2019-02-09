@@ -137,6 +137,8 @@ def get_overlay(basename, data_dict, keyfile):
 
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if annotation[ANNOT_FIELD_KEY]:
@@ -229,6 +231,8 @@ def do_buttons(basename, data_dict, keyfile):
 
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if not annotation[ANNOT_FIELD_KEY]:
@@ -291,6 +295,8 @@ def dump_fields(fp):
     
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
+        if annotations is None:
+            continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:
                 if annotation[ANNOT_FIELD_KEY]:
