@@ -16,6 +16,7 @@
 
 import forms.s_1040
 import forms.s1_1040
+import forms.s3_1040
 import forms.s4_1040
 import forms.s5_1040
 import forms.a_1040
@@ -35,6 +36,7 @@ def main():
 def fill_forms():
     forms.s_1040.fill_in_form()
     forms.s1_1040.fill_in_form()
+    forms.s3_1040.fill_in_form()
     forms.s4_1040.fill_in_form()
     forms.s5_1040.fill_in_form()
     forms.a_1040.fill_in_form()
