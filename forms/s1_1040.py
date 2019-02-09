@@ -56,8 +56,8 @@ def build_data():
     data_dict['business_dollars'] = schedule_c['net_profit_dollars']
     data_dict['business_cents'] = schedule_c['net_profit_cents']
 
-    data_dict['self_employment_dollars'] = schedule_se['line_6_dollars']
-    data_dict['self_employment_cents'] = schedule_se['line_6_cents']
+    data_dict['self_employment_dollars'] = schedule_se['_se_deduction_dollars']
+    data_dict['self_employment_cents'] = schedule_se['_se_deduction_cents']
 
     data_dict['sep_dollars'], data_dict['sep_cents'] =\
         utils.float_to_dollars_cents(float(sep_calcs['final_contrib_amt']))
