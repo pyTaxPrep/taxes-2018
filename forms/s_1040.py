@@ -277,6 +277,8 @@ def build_data(short_circuit = ''):
 
     utils.add_keyed_float(owed, 'owed', data_dict)
 
+    data_dict['_owed'] = owed
+
     return data_dict
 
 def fill_in_form():
