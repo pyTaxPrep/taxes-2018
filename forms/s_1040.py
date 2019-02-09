@@ -119,6 +119,7 @@ def build_data(short_circuit = ''):
 
     schedule_b  = b_1040.build_data()
     schedule_1 = s1_1040.build_data()
+    schedule_3 = s3_1040.build_data()
     schedule_4 = s4_1040.build_data()
     schedule_5 = s5_1040.build_data()
 
