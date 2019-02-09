@@ -1,0 +1,43 @@
+#    Copyright (C) 2019 pyTaxPrep
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+form1040_line10                         1 /Tx
+form1040_line3a                         2 /Tx
+filing_schedule_d_y                     Yes Enter the smaller of line 15 or 16 of /Btn
+filing_schedule_d_n                     No Enter the amount from Form 1040 /Btn
+schedule1_line13                        3 /Tx
+line_4                                  4 /Tx
+line_5                                  5 /Tx
+line_6                                  6 /Tx
+line_7                                  7 /Tx
+line_8                                  8 /Tx
+line_9                                  9 /Tx
+line_10                                 10 /Tx
+line_11                                 11 /Tx
+line_12                                 12 /Tx
+line_13                                 13 /Tx
+line_14                                 14 /Tx
+line_15                                 15 /Tx
+line_16                                 16 /Tx
+line_17                                 17 /Tx
+line_18                                 18 /Tx
+line_19                                 19 /Tx
+line_20                                 20 /Tx
+line_21                                 21 /Tx
+line_22                                 22 /Tx
+line_23                                 23 /Tx
+tax_table_amount_line7                  24 /Tx
+line_25                                 25 /Tx
+tax_table_amount_line1                  26 /Tx
+final_tax_on_income                     27 /Tx
