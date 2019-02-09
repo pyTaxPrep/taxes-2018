@@ -14,12 +14,11 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-Fills in a Schedule SE EZ form.
+Fills in a Schedule SE form.
 
 Relies on Schedule C, plus the 'name' and 'ssn' fields from data.json.
 
-Fills in lines 2 - 6; does not support line 1a or 1b (net farm profit,
-social security).
+Does not support net farm profit or social security.
 '''
 
 from . import utils
