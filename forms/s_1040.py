@@ -165,7 +165,9 @@ def build_data(short_circuit = ''):
                 data_dict['_rollover_flag'] = True
 
             if x['type'] == 'backdoor_conversion':
+                distributions_total += x['converted']
                 distributions_taxable += f_8606.build_data()['_taxable_amt']
+                print("Taxable amount from conversion: ", f_8606.build_data()['_taxable_amt'])
 
         utils.add_keyed_float(distributions_total,
                               'ira_pension_annuity',
