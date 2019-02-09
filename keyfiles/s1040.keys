@@ -105,10 +105,10 @@ form_4972_y                             FEFF00630032005F00300032005B0030005D /Bt
 form_other_y                            FEFF00630032005F00300033005B0030005D /Btn
 form_other                              FEFF00660032005F00330031005B0030005D /Tx
 schedule_2_y                            FEFF00630032005F00300034005B0030005D /Btn
-schedule_2_dollars                      FEFF00660032005F00330032005B0030005D /Tx
-schedule_2_cents                        FEFF00660032005F00330033005B0030005D /Tx
+line_11_dollars                         FEFF00660032005F00330032005B0030005D /Tx
+line_11_cents                           FEFF00660032005F00330033005B0030005D /Tx
 child_tax_credit                        FEFF00660032005F00330034005B0030005D /Tx
-child_tax_credit_y                      FEFF00630032005F00300035005B0030005D /Btn
+schedule_3_added_y                      FEFF00630032005F00300035005B0030005D /Btn
 schedule_3_dollars                      FEFF00660032005F00330035005B0030005D /Tx
 schedule_3_cents                        FEFF00660032005F00330036005B0030005D /Tx
 line_13_dollars                         FEFF00660032005F00330037005B0030005D /Tx
