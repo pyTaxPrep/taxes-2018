@@ -189,6 +189,7 @@ def build_data(short_circuit = ''):
 
     fields = ['wages_salaries_tips',
               'ordinary_dividends',
+              'taxable_interest',
               'taxable_ira_pension_annuity',
               '_s1_income']
 
