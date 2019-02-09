@@ -219,6 +219,15 @@ def build_data(short_circuit = ''):
     utils.add_keyed_float(deduction, 'deductions', data_dict)
     
     taxable_income = agi - deduction
+
+    # This is weird ... the IRS says the QBI deduction calculation
+    # involves taxable income, but taxable income depends on the
+    # QBI deduction. 
+    qbi_deduction = qualified_business_deduction(taxable_income, schedule_1)
+    deduction += qbi_deduction
+    taxable_income -= qbi_deduction
+
+    utils.add_keyed_float(qbi_deduction, 'qualified_business_deductions', data_dict)
     utils.add_keyed_float(taxable_income, 'taxable_income', data_dict)
 
     if short_circuit == 'Tax Worksheet':
