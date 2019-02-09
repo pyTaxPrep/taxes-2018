@@ -29,11 +29,29 @@ data = utils.parse_values()
 ###################################
 
 def build_data():
-    
+
+    data_dict = {
+        'ez_name'             : data['name'],
+        'ez_ssn'              : data['ssn'],
+        'name'             : data['name'],
+        'ssn'              : data['ssn']
+        }
+
+
+    w2_income = sum( [ x['ss_wages'] for x in data['w2'] ] )
+
     schedule_c = cez_1040.build_data()
 
-    line_2 = utils.dollars_cents_to_float(schedule_c['net_profit_dollars'],
-                                          schedule_c['net_profit_cents'])
+    se_income = utils.dollars_cents_to_float(schedule_c['net_profit_dollars'],
+                                             schedule_c['net_profit_cents'])
+
+    if se_income + w2_income > 128400:
+        build_long_schedule_se(data_dict, se_income)
+    else:
+        build_short_schedule_se(data_dict, se_income)
+
+    return data_dict
+
     line_3 = line_2
 
     line_4 = line_3 * 0.9235
