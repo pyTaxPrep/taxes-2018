@@ -132,6 +132,9 @@ def get_overlay(basename, data_dict, keyfile):
     data = io.BytesIO()
     pdf = reportlab.pdfgen.canvas.Canvas(data)
 
+    if '_width' not in data_dict:
+        data_dict['_width'] = 8
+
     for page in template_pdf.pages:
         annotations = page[ANNOT_KEY]
         for annotation in annotations:
