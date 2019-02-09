@@ -63,7 +63,7 @@ def fill_forms():
              os.path.join('filled', 'f1040sb.pdf'),
              os.path.join('filled', 'f1040sce.pdf'),
              os.path.join('filled', 'f1040sse.pdf'),
-             os.path.join('filled', 'f8606_2.pdf'),
+             os.path.join('filled', 'f8606.pdf'),
              os.path.join('filled', 'SEP_IRA_Worksheet.pdf')]
 
     merger = PdfFileMerger()
