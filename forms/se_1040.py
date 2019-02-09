@@ -52,6 +52,10 @@ def build_data():
 
     return data_dict
 
+def build_short_schedule_se(data_dict, se_income):
+
+    line_2 = se_income
+
     line_3 = line_2
 
     line_4 = line_3 * 0.9235
@@ -60,21 +64,102 @@ def build_data():
 
     line_6 = line_5 * 0.50
 
-    data_dict = {
-        'name'             : data['name'],
-        'ssn'              : data['ssn']
-        }
+    utils.add_keyed_float(line_2, 'ez_line_2', data_dict)
+    utils.add_keyed_float(line_3, 'ez_line_3', data_dict)
+    utils.add_keyed_float(line_4, 'ez_line_4', data_dict)
+    utils.add_keyed_float(line_5, 'ez_line_5', data_dict)
+    utils.add_keyed_float(line_6, 'ez_line_6', data_dict)
 
-    utils.add_keyed_float(line_2, 'line_2', data_dict)
-    utils.add_keyed_float(line_3, 'line_3', data_dict)
-    utils.add_keyed_float(line_4, 'line_4', data_dict)
-    utils.add_keyed_float(line_5, 'line_5', data_dict)
-    utils.add_keyed_float(line_6, 'line_6', data_dict)
+    utils.add_keyed_float(line_6,
+                          '_se_deduction',
+                          data_dict)
 
-    return data_dict
+    utils.add_keyed_float(line_5,
+                          '_se_tax',
+                          data_dict)
+
+
+def build_long_schedule_se(data_dict, se_income):
+
+    line_2 = se_income
+
+    utils.add_keyed_float(line_2,
+                          'net_profit',
+                          data_dict)
+
+    line_3 = line_2
+
+    utils.add_keyed_float(line_3,
+                          'line_3',
+                          data_dict)
+
+    line_4 = line_3 * 0.9235
+    
+    utils.add_keyed_float(line_4,
+                          'line_4a',
+                          data_dict)
+    utils.add_keyed_float(line_4,
+                          'line_4c',
+                          data_dict)
+
+    line_6 = line_4
+
+    utils.add_keyed_float(line_6,
+                          'line_6',
+                          data_dict)
+
+    line_8a = sum( x['ss_wages'] for x in data['w2'] )
+
+    utils.add_keyed_float(line_8a,
+                          'total_ss_wages',
+                          data_dict)
+
+    line_8d = line_8a
+
+    utils.add_keyed_float(line_8d,
+                          'line_8d',
+                          data_dict)
+
+    line_9 = 128400 - line_8d
+
+    utils.add_keyed_float(line_9,
+                          'line_9',
+                          data_dict)
+
+    line_10 = min(line_6, line_9) * 0.124
+
+    utils.add_keyed_float(line_10,
+                          'line_10',
+                          data_dict)
+
+    line_11 = line_6 * 0.029
+
+    utils.add_keyed_float(line_11,
+                          'line_11',
+                          data_dict)
+
+    line_12 = line_10 + line_11
+
+    utils.add_keyed_float(line_12,
+                          'se_tax',
+                          data_dict)
+    utils.add_keyed_float(line_12,
+                          '_se_tax',
+                          data_dict)
+
+    line_13 = line_12 * 0.5
+
+    utils.add_keyed_float(line_13,
+                          'se_deduction',
+                          data_dict)
+    utils.add_keyed_float(line_13,
+                          '_se_deduction',
+                          data_dict)
+
 
 def fill_in_form():
     data_dict = build_data()
+    data_dict['_width'] = 9
     basename = 'f1040sse.pdf'
     utils.write_fillable_pdf(basename, data_dict, 'sse.keys')
 
