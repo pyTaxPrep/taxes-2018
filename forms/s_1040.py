@@ -239,12 +239,22 @@ def build_data(short_circuit = ''):
 
     utils.add_keyed_float(tax_due, 'line_11', data_dict)
 
+    data_dict['schedule_3_added_y'] = True
+    utils.add_keyed_float(schedule_3['_total_credits'],
+                          'schedule_3',
+                          data_dict)
+
+    line_13 = tax_due - schedule_3['_total_credits']
+    line_13 = max( line_13, 0 )
+
+    utils.add_keyed_float(line_13, 'line_13', data_dict)
+
     other_taxes = utils.dollars_cents_to_float(schedule_4['total_other_taxes_dollars'],
                                                schedule_4['total_other_taxes_cents'])
 
     utils.add_keyed_float(other_taxes, 'other_taxes', data_dict)
 
-    total_tax = other_taxes + tax_due
+    total_tax = other_taxes + line_13
 
     utils.add_keyed_float(total_tax, 'total_tax', data_dict)
 
