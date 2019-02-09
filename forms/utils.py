@@ -25,6 +25,8 @@ import json
 import pdfrw
 import reportlab.pdfgen.canvas
 
+ROUND_TO_DOLLARS = True
+
 # PDF Format Keys
 ANNOT_KEY = '/Annots'
 ANNOT_FIELD_KEY = '/T'
