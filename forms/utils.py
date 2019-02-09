@@ -154,10 +154,7 @@ def get_overlay(basename, data_dict, keyfile):
                         
                     if readable in data_dict:
                         if ftype == '/Btn':
-                            if data_dict[readable] == True:
-                                value = 'X'
-                            else:
-                                value = 'Blank'
+                            value = 'X'
                         else:
                             if readable.endswith('_cents'):
                                 value = str(data_dict[readable]).zfill(2)
