@@ -92,6 +92,7 @@ def build_data():
 
 def fill_in_form():
     data_dict = build_data()
+    data_dict['_width'] = 9
     basename = 'f1040s1.pdf'
     utils.write_fillable_pdf(basename, data_dict, 's1.keys')
 
