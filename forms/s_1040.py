@@ -21,6 +21,7 @@ Relies on the following forms:
     - 1040 Schedule A
     - 1040 Schedule B
     - 1040 Schedule 1
+    - 1040 Schedule 3
     - 1040 Schedule 4
     - 1040 Schedule 5
     
@@ -39,6 +40,7 @@ In addition, the following values must be defined in data.json:
 
 Optional keys:
     => address_apt
+    => qbi_deduction
 
 Fills in the following lines:
 
