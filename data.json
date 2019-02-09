@@ -21,6 +21,8 @@
 
         "1099_misc"      : [{"other_income" : 25012}],
 
+        "qbi_deduction"  : true,
+
         "1099_r"         : [
                             {"type" : "rollover",
                              "amount" : 1000.50},
