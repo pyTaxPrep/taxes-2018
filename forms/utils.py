@@ -320,9 +320,7 @@ def calculate_tax_due(taxable_income):
             return amt
 
     if taxable_income >= 100000 and taxable_income < 157500:
-        print ("Taxable Income", taxable_income)
         tax_due = taxable_income * 0.24 - 5710.50
-        print ("Tax Due", tax_due)
     elif taxable_income >= 157500 and taxable_income < 200000:
         tax_due = taxable_income * 0.32 - 18310.50
     elif taxable_income >= 20000 and taxable_income < 200000:
