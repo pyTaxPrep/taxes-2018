@@ -208,6 +208,8 @@ Implementation Details:
 Change Log
 ==========
 
+1.2: Added support for signing and dating tax returns.
+
 1.1: Added support for 1040-V, Qualified Business Income Deduction,
      Tax Worksheet, and Schedule 3. Fixed lots of small bugs.
 
