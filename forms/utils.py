@@ -135,9 +135,30 @@ def get_overlay(basename, data_dict, keyfile):
     if '_width' not in data_dict:
         data_dict['_width'] = 8
 
-    for page in template_pdf.pages:
+    for i, page in enumerate(template_pdf.pages):
+
+        if '_signature_page' in data_dict:
+            if data_dict['_signature_page'] == i + 1:
+                pdf.drawImage(data_dict['_signature_path'],
+                              data_dict['_signature_x'],
+                              data_dict['_signature_y'],
+                              width = data_dict['_signature_width'],
+                              height = data_dict['_signature_height'])
+
+        if '_extra_annots' in data_dict:
+            if i + 1 in data_dict['_extra_annots']:
+                extras = data_dict['_extra_annots'][i + 1]
+                for each in extras:
+                    
+                    pdf.setFont('Courier', each['size'])
+
+                    pdf.drawString(each['x'],
+                                   each['y'],
+                                   each['string'])
+
         annotations = page[ANNOT_KEY]
         if annotations is None:
+            pdf.showPage()
             continue
         for annotation in annotations:
             if annotation[SUBTYPE_KEY] == WIDGET_SUBTYPE_KEY:

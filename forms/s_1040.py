@@ -37,6 +37,7 @@ In addition, the following values must be defined in data.json:
     => occupation
     => w2 (list of dictionaries containing 'income' and 'federal_withheld' fields)
     => 1099_div (list of dictionaries contaiing 'total_qualified' field)
+    => signature (path to an image file with your signature)
 
 Optional keys:
     => address_apt
@@ -64,6 +65,7 @@ Hard coded values:
 '''
 
 import json
+import datetime
 from . import utils
 from . import a_1040
 from . import b_1040
@@ -284,6 +286,19 @@ def build_data(short_circuit = ''):
 def fill_in_form():
     data_dict = build_data()
     data_dict['_width'] = 9
+    data_dict['_signature_page'] = 1
+    data_dict['_signature_x'] = 105
+    data_dict['_signature_y'] = 475
+    data_dict['_signature_width'] = 150
+    data_dict['_signature_height'] = 20
+    data_dict['_signature_path'] = data['signature']
+
+    data_dict['_extra_annots'] = {
+        1 : [ {'string' : datetime.datetime.today().strftime('%m/%d/%y'),
+               'x' : 275,
+               'y' : 475,
+               'size' : 10} ]
+        }
     basename = 'f1040.pdf'
     utils.write_fillable_pdf(basename, data_dict, 's1040.keys')
 

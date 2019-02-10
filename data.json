@@ -5,6 +5,7 @@
         "name_middle"    : "Malted",
         "name_middle_i"  : "M",
         "name_last"      : "Mouse",
+        "signature"      : "signature.png",
 
         "address"        : "123 Foo Bar",
         "address_apt"    : "A",
